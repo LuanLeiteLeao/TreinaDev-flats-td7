@@ -88,6 +88,6 @@ describe 'Visitor visit home page' do
    expect(page).to have_text("casa em Brasília")
    expect(page).to have_text("casa com quital em Copacabana")
  
-
+      # test
   end
 end
