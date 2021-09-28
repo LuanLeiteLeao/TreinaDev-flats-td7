@@ -57,4 +57,37 @@ describe 'Visitor visit home page' do
     expect(page).to have_text("Estacionamento: Não")
     expect(page).to have_text("Diária: R$ 500")
   end
+
+  it 'and views property details and return to home page ' do
+    # Arrange => Preaparar (os dados)
+    Property.create({
+    title:'casa com quital em Copacabana',
+    description:'Exelente casa, recém reformada com 2 vagas de garagem',
+    rooms: 5,
+    parking_slot:false,
+    bathroom:2,
+    pets:true,
+    daily_rate: 500
+    }) 
+
+    Property.create({
+      title:'casa em Brasília',
+      description:'Exelente casa, com goteira',
+      rooms: 5,
+      parking_slot:false,
+      bathroom:2,
+      pets:true,
+      daily_rate: 500
+      }) 
+
+    visit root_path
+    click_on 'casa com quital em Copacabana'
+    click_on 'Voltar'
+
+   expect(current_page).to eq root_path
+   expect(page).to have_text("casa em Brasília")
+   expect(page).to have_text("casa com quital em Copacabana")
+ 
+
+  end
 end
