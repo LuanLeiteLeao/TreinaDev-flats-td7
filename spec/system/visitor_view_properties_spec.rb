@@ -83,8 +83,7 @@ describe 'Visitor visit home page' do
     visit root_path
     click_on 'casa com quital em Copacabana'
     click_on 'Voltar'
-
-   expect(current_page).to eq root_path
+   expect(current_path).to eq root_path
    expect(page).to have_text("casa em Brasília")
    expect(page).to have_text("casa com quital em Copacabana")
  
