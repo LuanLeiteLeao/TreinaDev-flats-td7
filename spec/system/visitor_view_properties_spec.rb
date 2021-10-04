@@ -6,14 +6,21 @@ describe 'Visitor visit home page' do
     Property.create({
         title:'casa com quital em Copacabana',
         description:'Exelente casa, recém reformada com 2 vagas de garagem',
-        rooms: 5
+        rooms: 5,
+        parking_slot:false,
+        bathroom:2,
+        pets:true,
+        daily_rate: 500
     })
 
     Property.create({
         title:'Apartamento com varanda em Salvador',
         description:'Exelente Apartamento, churrasqueira e sauna privada',
         rooms: 8,
-        parking_slot:false
+        parking_slot:false,
+        bathroom:2,
+        pets:true,
+        daily_rate: 500
     })
 
     # Act => Agir (Execultar a funcionalidade )
